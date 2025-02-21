@@ -4,58 +4,25 @@ import { motion } from "framer-motion";
 
 export default function Home() {
   return (
-    <motion.main 
-      className="min-h-screen bg-gray-100"
+    <motion.main
+      className="min-h-screen bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0, transition: { duration: 0.5 } }}
     >
-      {/* Navbar */}
-      <nav className="bg-white shadow-md p-4 flex justify-between items-center sticky top-0 z-50">
-        <h1 className="text-2xl font-bold text-blue-600">VIT Chennai Library</h1>
-        <div className="space-x-4">
-          <motion.div whileHover={{ scale: 1.1 }}>
-            <Link href="/catalog" className="text-gray-700 hover:text-blue-600 font-medium">Catalog</Link>
-          </motion.div>
-          <motion.div whileHover={{ scale: 1.1 }}>
-            <Link href="/tracking" className="text-gray-700 hover:text-blue-600 font-medium">Tracking</Link>
-          </motion.div>
-          <motion.div whileHover={{ scale: 1.1 }}>
-            <Link href="/about" className="text-gray-700 hover:text-blue-600 font-medium">About</Link>
-          </motion.div>
-          <motion.div whileHover={{ scale: 1.1 }}>
-            <Link href="/contact" className="text-gray-700 hover:text-blue-600 font-medium">Contact</Link>
-          </motion.div>
-        </div>
-      </nav>
-
       {/* Hero Section */}
-      <section className="text-center py-20 px-6">
-        <motion.h2 className="text-4xl font-bold text-gray-800" initial={{ y: -50 }} animate={{ y: 0 }} transition={{ duration: 0.5 }}>Welcome to VIT Chennai Library</motion.h2>
-        <p className="text-gray-600 mt-4 text-lg">Explore a vast collection of books, research papers, and digital resources.</p>
-        <div className="mt-6">
-          <motion.div whileHover={{ scale: 1.1 }}>
-            <Link href="/catalog" className="bg-blue-600 text-white px-6 py-3 rounded-lg shadow-md hover:bg-blue-700 transition">
+      <section className="w-full flex justify-center items-center min-h-[70vh] bg-cover bg-center" style={{ backgroundImage: "url('/images/library-bg.jpg')" }}>
+        <div className="bg-white dark:bg-gray-800 bg-opacity-80 dark:bg-opacity-90 p-10 rounded-xl shadow-lg text-center max-w-3xl">
+          <motion.h2 className="text-5xl font-extrabold text-gray-900 dark:text-white drop-shadow-lg" initial={{ opacity: 0, y: -50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
+            Welcome to VIT Chennai Library
+          </motion.h2>
+          <p className="text-xl text-gray-700 dark:text-gray-300 mt-4">Your gateway to knowledge and endless learning resources.</p>
+          <motion.div whileHover={{ scale: 1.1 }} className="mt-8">
+            <Link href="/catalog" className="bg-blue-700 text-white px-10 py-4 rounded-lg shadow-lg hover:bg-blue-800 transition text-lg font-semibold">
               Browse Catalog
             </Link>
           </motion.div>
         </div>
-      </section>
-
-      {/* Features Section */}
-      <section className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 px-6 py-12">
-        <motion.div className="bg-white p-6 shadow-md rounded-lg text-center" whileHover={{ scale: 1.05 }}>
-          <h3 className="text-xl font-semibold text-blue-600">Biometric Tracking</h3>
-          <p className="text-gray-600 mt-2">Track student & faculty movements seamlessly.</p>
-        </motion.div>
-        <motion.div className="bg-white p-6 shadow-md rounded-lg text-center" whileHover={{ scale: 1.05 }}>
-          <h3 className="text-xl font-semibold text-blue-600">Facial Recognition</h3>
-          <p className="text-gray-600 mt-2">A modern approach to secure and seamless check-ins.</p>
-        </motion.div>
-        <motion.div className="bg-white p-6 shadow-md rounded-lg text-center" whileHover={{ scale: 1.05 }}>
-          <h3 className="text-xl font-semibold text-blue-600">Real-Time Reports</h3>
-          <p className="text-gray-600 mt-2">Get instant insights into library activity.</p>
-        </motion.div>
       </section>
     </motion.main>
   );

@@ -18,15 +18,7 @@ export default function Page() {
   
   return (
     <main className="min-h-screen bg-gray-50 p-6">
-      <nav className="bg-white shadow-md p-4 flex justify-between items-center sticky top-0 z-50">
-        <h1 className="text-2xl font-bold text-blue-600">Catalog</h1>
-        <div className="space-x-4">
-          <Link href="/" className="text-gray-700 hover:text-blue-600 font-medium">Home</Link>
-          <Link href="/tracking" className="text-gray-700 hover:text-blue-600 font-medium">Tracking</Link>
-          <Link href="/about" className="text-gray-700 hover:text-blue-600 font-medium">About</Link>
-          <Link href="/contact" className="text-gray-700 hover:text-blue-600 font-medium">Contact</Link>
-        </div>
-      </nav>
+     
       
       <section className="max-w-4xl mx-auto mt-6">
         <input
